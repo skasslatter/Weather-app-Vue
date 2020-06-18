@@ -1,11 +1,11 @@
 <template>
   <div>
-    <WeatherToday/>
+    <WeatherAverage />
   </div>
 </template>
 
 <script>
-import WeatherToday from "./WeatherToday";
+import WeatherAverage from "./WeatherAverage";
 
 
 export default {
@@ -14,9 +14,12 @@ export default {
     return {};
   },
   components: {
-    WeatherToday,
+    WeatherAverage,
   },
-  methods: {}
+  methods: {},
+  props: {
+    weatherForecast: Array,
+  },
 };
 </script>
 
