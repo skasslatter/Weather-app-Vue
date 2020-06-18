@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SearchBar />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios";
+import SearchBar from "./components/SearchBar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    SearchBar
+  },
+  methods: {
+    getWeather() {
+      console.log("testing getWeather ");
+      axios
+        .get(`http://api.weatherbit.io/v2.0/current&key=${process.env.APIKEY}&city=Raleigh&country=US`)
+        .then(response => {
+          console.log("response: ", response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -26,3 +39,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
