@@ -11,7 +11,6 @@
       />
       <img src="magnifyingGlass.png" alt="Magnifying Glass" />
     </div>
-    <!-- <p>Message is: {{ location }} {{countryCode}}</p> -->
   </div>
 </template>
 
@@ -33,9 +32,9 @@ export default {
     handleSubmit() {
       console.log("testing handleSubmit: ", this.location, this.countryCode);
       let data = {
-        location: this.location, 
+        location: this.location,
         countryCode: this.countryCode
-      }
+      };
       this.$emit("search", data);
     }
   }
