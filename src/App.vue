@@ -1,23 +1,26 @@
 <template>
   <div id="app">
-    <SearchBar />
+    <SearchBar @search="updateWeather"/>
+    <WeatherForecast />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
+import WeatherForecast from "./components/WeatherForecast";
 
 export default {
   name: "App",
   components: {
-    SearchBar
+    SearchBar,
+    WeatherForecast,
   },
   methods: {
-    getWeather() {
-      console.log("testing getWeather ");
+    updateWeather(data) {
+      console.log("testing updateWeather", data);
       axios
-        .get(`http://api.weatherbit.io/v2.0/current&key=${process.env.APIKEY}&city=Raleigh&country=US`)
+        .get(`http://api.weatherbit.io/v2.0/current?key=${process.env.VUE_APP_APIKEY}&city=${data.location}&country=${data.countryCode}`)
         .then(response => {
           console.log("response: ", response);
         })

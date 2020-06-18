@@ -9,11 +9,9 @@
         type="text"
         placeholder="Please enter your location.."
       />
-      <img 
-      src="magnifyingGlass.png" alt="Magnifying Glass" />
+      <img src="magnifyingGlass.png" alt="Magnifying Glass" />
     </div>
-          <!-- <p>Message is: {{ location }} {{countryCode}}</p> -->
-
+    <!-- <p>Message is: {{ location }} {{countryCode}}</p> -->
   </div>
 </template>
 
@@ -26,14 +24,19 @@ export default {
     return {
       location: "",
       countryCode: "NL"
-    }
+    };
   },
   components: {
     CountrySelect
   },
   methods: {
     handleSubmit() {
-      console.log("testing handleSubmit: ", this.location);
+      console.log("testing handleSubmit: ", this.location, this.countryCode);
+      let data = {
+        location: this.location, 
+        countryCode: this.countryCode
+      }
+      this.$emit("search", data);
     }
   }
 };
