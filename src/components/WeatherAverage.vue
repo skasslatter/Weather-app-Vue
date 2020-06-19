@@ -1,29 +1,18 @@
 <template>
   <div>
-    <div>{{today}} - {{todayPlus10}} {{currentYear}}</div>
+    <div>{{dateString}}</div>
     <div>{{this.averageTemperature}} °C</div>
   </div>
 </template>
 
 <script>
+//to get the date
 import { DateTime } from "luxon";
-DateTime.local();
-
-var timeAndDate = DateTime.local();
-var monthDay = {month: 'long', day: 'numeric'};
-var year = {year: 'numeric'}
-var today = timeAndDate.setLocale('en-US').toLocaleString(monthDay) 
-var todayPlus10 = timeAndDate.plus({days: 7}).setLocale('en-US').toLocaleString(monthDay) 
-var currentYear = timeAndDate.setLocale('en-US').toLocaleString(year) 
 
 export default {
   name: "WeatherForecast",
   data() {
-    return {
-      today,
-      todayPlus10,
-      currentYear
-    };
+    return {};
   },
   components: {},
   methods: {},
@@ -39,14 +28,32 @@ export default {
       for (let i = 0; i < this.forecastData.length; i++) {
         arr.push(this.forecastData[i].temp);
       }
-      console.log("arr", arr);
       let sum = 0;
       for (let i = 0; i < arr.length; i++) {
         sum = sum + arr[i];
       }
-      console.log("sum", sum);
       let average = (sum / arr.length).toFixed(1);
       return average;
+    },
+    dateString: function() {
+      const startDate = DateTime.fromISO(this.forecastData[0].datetime);
+      const endDate = DateTime.fromISO(
+        this.forecastData[this.forecastData.length - 1].datetime
+      );
+      const startMonth = startDate
+        .setLocale("en-US")
+        .toLocaleString({ month: "long" });
+      const endMonth = endDate
+        .setLocale("en-US")
+        .toLocaleString({ month: "long" });
+
+      if (startDate.year !== endDate.year) {
+        return `${startMonth} ${startDate.day} ${startDate.year} - ${endMonth.month} ${endDate.day} ${endDate.year}`;
+      } else if (startDate.month !== endDate.month) {
+        return `${startMonth} ${startDate.day} - ${endMonth.month} ${endDate.day} ${startDate.year}`;
+      } else {
+        return `${startMonth} ${startDate.day} - ${endDate.day} ${startDate.year}`;
+      }
     }
   }
 };
