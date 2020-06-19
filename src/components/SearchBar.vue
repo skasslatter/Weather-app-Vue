@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .searchbar {
-  position: absolute;
+  /* position: absolute; */
   width: 632px;
   height: 92px;
   left: 404px;

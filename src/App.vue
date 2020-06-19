@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <SearchBar @search="updateWeather" />
+    <div v-if="forecastData">
     <WeatherForecast v-bind:forecastData="forecastData" />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { DateTime } from "luxon";
-DateTime.local();
 
 import SearchBar from "./components/SearchBar";
 import WeatherForecast from "./components/WeatherForecast";
