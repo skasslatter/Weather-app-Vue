@@ -1,10 +1,12 @@
 <template>
   <div>
     <!-- <label for="countries">Choose a country:</label> -->
-    <select name="countries" 
+    <select
+      name="countries"
+      class="countries"
       v-bind:value="value"
       v-on:input="$emit('input', $event.target.value)"
-      >
+    >
       <option
         v-for="(country, index) in countries"
         :key="index"
@@ -26,7 +28,7 @@ for (const key in countries) {
 
 export default {
   name: "CountrySelect",
-  props: ['value'],
+  props: ["value"],
   data() {
     return {
       countries: countriesNameAndFlag
@@ -36,4 +38,10 @@ export default {
 </script>
 
 <style scoped>
+.countries {
+  border-width: 0px;
+  outline: none;
+  font-family: Poppins;
+  font-weight: 600;
+}
 </style>

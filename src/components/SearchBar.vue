@@ -1,7 +1,7 @@
 <template>
   <div class="searchbar">
     <img class="cloud-icon" src="/cloud.png" alt="Cloud" />
-    <CountrySelect v-model="countryCode" />
+    <CountrySelect v-model="countryCode" class="country-select"/>
     <div class="search-text">
       <input
         v-model="location"
@@ -108,5 +108,18 @@ export default {
   height: 19.41px;
   left: 981px;
   top: 410px;
+}
+
+.country-select {
+  width: 95px;
+height: 48px;
+left: 486px;
+top: 216px;
+
+background: #FFFFFF;
+border: 1px solid rgba(8, 21, 62, 0.05);
+border-radius: 6px;
+    display: flex;
+    justify-content: center;
 }
 </style>

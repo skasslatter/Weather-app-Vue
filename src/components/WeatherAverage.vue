@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>{{dateString}}</div>
+  <div class="avarage-temp">
+    <div class="date">{{dateString}}</div>
     <div>{{this.averageTemperature}} °C</div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
       for (let i = 0; i < arr.length; i++) {
         sum = sum + arr[i];
       }
-      let average = (sum / arr.length).toFixed(1);
+      let average = Math.round(sum / arr.length);
       return average;
     },
     dateString: function() {
@@ -60,4 +60,13 @@ export default {
 </script>
 
 <style scoped>
+.date {
+  text-transform: uppercase;
+}
+
+.avarage-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
