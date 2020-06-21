@@ -1,7 +1,11 @@
 <template>
   <div class="avarage-temp">
     <div class="date">{{dateString}}</div>
-    <div>{{this.averageTemperature}} °C</div>
+    <!-- <div>{{this.averageTemperature}} °C</div> -->
+    <div class="temp-container">
+      <div class="temp">{{this.averageTemperature}}</div>
+      <div class="celsius">°C</div>
+    </div>
   </div>
 </template>
 
@@ -62,11 +66,44 @@ export default {
 <style scoped>
 .date {
   text-transform: uppercase;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+
+  color: #08153e;
+  margin-bottom: 27px;
 }
 
 .avarage-temp {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.temp-container {
+  display: flex;
+  margin-bottom: 48px;
+}
+
+.temp {
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 120px;
+
+  color: #ffffff;
+}
+
+.celsius {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+
+  color: #ffffff;
 }
 </style>

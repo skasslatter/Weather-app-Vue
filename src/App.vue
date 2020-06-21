@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <SearchBar @search="updateWeather" />
-    <div v-if="forecastData">
+    <div v-if="loading">Loading...</div>
+    <div v-else-if="errorMessage">{{errorMessage}}</div>
+    <div v-else-if="forecastData">
       <WeatherForecast v-bind:forecastData="forecastData" />
     </div>
   </div>
@@ -17,7 +19,9 @@ export default {
   name: "App",
   data() {
     return {
-      forecastData: null
+      forecastData: null,
+      loading: false,
+      errorMessage: null
     };
   },
   components: {
@@ -26,16 +30,24 @@ export default {
   },
   methods: {
     updateWeather(data) {
+      this.loading = true;
       console.log("testing updateWeather", data);
       const baseUrl = `http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.VUE_APP_APIKEY}`;
       axios
         .get(`${baseUrl}&city=${data.location},${data.countryCode}&days=10`)
         .then(response => {
+          this.loading = false;
           console.log("response from API: ", response.data);
-          this.forecastData = response.data.data;
+          if (!response.data) {
+            this.errorMessage = "Please enter a valid city";
+          } else {
+            this.forecastData = response.data.data;
+            this.errorMessage = null;
+          }
         })
         .catch(error => {
           console.log(error);
+          this.errorMessage = "Failed to fetch forecast data";
         });
     }
   }
@@ -46,7 +58,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 body {
-  margin: 0px
+  margin: 0px;
 }
 
 #app {
@@ -70,6 +82,10 @@ body {
       #ffc178 96.44%,
       #fe9255 111.85%
     );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 </style>
 

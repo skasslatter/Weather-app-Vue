@@ -1,7 +1,7 @@
 <template>
   <div class="searchbar">
     <img class="cloud-icon" src="/cloud.png" alt="Cloud" />
-    <CountrySelect v-model="countryCode" class="country-select"/>
+    <CountrySelect v-model="countryCode" class="country-select" />
     <div class="search-text">
       <input
         v-model="location"
@@ -9,7 +9,7 @@
         type="text"
         placeholder="Please enter your location.."
       />
-      <img src="magnifyingGlass.png" alt="Magnifying Glass" />
+      <img v-on:click="handleSubmit" src="magnifyingGlass.png" alt="Search" />
     </div>
   </div>
 </template>
@@ -43,7 +43,6 @@ export default {
 
 <style scoped>
 .searchbar {
-  /* position: absolute; */
   width: 632px;
   height: 92px;
   left: 404px;
@@ -59,10 +58,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 48px;
 }
 
 .cloud-icon {
-  /* position: absolute; */
   width: 48px;
   height: 48px;
   left: 426px;
@@ -90,8 +89,6 @@ export default {
   left: 606px;
   top: 405px;
 
-  font-family: Poppins;
-  font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
@@ -101,6 +98,7 @@ export default {
   color: #08153e;
   opacity: 0.5;
   border-width: 0;
+  outline: none;
 }
 
 .search-text img {
@@ -112,14 +110,14 @@ export default {
 
 .country-select {
   width: 95px;
-height: 48px;
-left: 486px;
-top: 216px;
+  height: 48px;
+  left: 486px;
+  top: 216px;
 
-background: #FFFFFF;
-border: 1px solid rgba(8, 21, 62, 0.05);
-border-radius: 6px;
-    display: flex;
-    justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(8, 21, 62, 0.05);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
 }
 </style>

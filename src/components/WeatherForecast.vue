@@ -1,7 +1,7 @@
 <template>
   <div>
-    <WeatherAverage v-bind:forecastData="forecastData"/>
-    <WeatherNextWeek v-bind:forecastData="forecastData"/>
+    <WeatherAverage v-bind:forecastData="forecastData" />
+    <WeatherNextWeek v-bind:forecastData="forecastData" />
   </div>
 </template>
 
@@ -9,12 +9,11 @@
 import WeatherAverage from "./WeatherAverage";
 import WeatherNextWeek from "./WeatherNextWeek";
 
-
 export default {
   name: "WeatherForecast",
   data() {
     return {
-
+      
     };
   },
   components: {
@@ -23,8 +22,8 @@ export default {
   },
   methods: {},
   props: {
-    forecastData: Array,
-  },
+    forecastData: Array
+  }
 };
 </script>
 

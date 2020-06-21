@@ -1,6 +1,6 @@
 <template>
-  <div class="weeklyForecast">
-    <div v-for="(day, index) in nextWeekTemperatures" :key="index">
+  <div class="week-container">
+    <div class="day-container" v-for="(day, index) in nextWeekTemperatures" :key="index">
       <div class="weekday">{{day.dayOfTheWeek}}</div>
       <div class="temp-container">
         <div class="temp">{{day.temp}}</div>
@@ -44,14 +44,33 @@ export default {
 </script>
 
 <style scoped>
-.weeklyForecast {
+.week-container {
   flex-direction: row;
   display: flex;
   justify-content: space-around;
+  width: 632px;
+}
+
+.day-container {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 }
 
 .weekday {
   text-transform: uppercase;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: #08153e;
 }
 
 .temp-container {
@@ -59,16 +78,22 @@ export default {
 }
 
 .temp {
+  font-family: Poppins;
+  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  /* color: #FFFFFF; */
+
+  color: #ffffff;
 }
 
 .celsius {
+  font-family: Poppins;
+  font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 24px;
-  /* color: #FFFFFF; */
+
+  color: #ffffff;
 }
 </style>
