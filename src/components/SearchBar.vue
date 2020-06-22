@@ -9,7 +9,12 @@
         type="text"
         placeholder="Please enter your location.."
       />
-      <img v-on:click="handleSubmit" src="/magnifyingGlass.png" alt="Search" />
+      <img
+        v-on:click="handleSubmit"
+        src="/magnifyingGlass.png"
+        alt="Search"
+        :class="!location  ? 'transparent' : ''"
+      />
     </div>
   </div>
 </template>
@@ -77,6 +82,15 @@ export default {
   padding: 9px 17px;
 }
 
+.search-text:hover {
+  border: 1px solid #b5c7ff;
+}
+
+.search-text:focus-within {
+  border: 2px solid #b5c7ff;
+  padding: 8px 16px;
+}
+
 .search-text input {
   width: 299px;
   height: 30px;
@@ -89,7 +103,6 @@ export default {
   align-items: center;
 
   color: #08153e;
-  opacity: 0.5;
   border-width: 0;
   outline: none;
 }
@@ -112,5 +125,9 @@ export default {
   border-radius: 6px;
   display: flex;
   justify-content: center;
+}
+
+.transparent {
+  opacity: 0.5;
 }
 </style>

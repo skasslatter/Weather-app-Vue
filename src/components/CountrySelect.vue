@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <label for="countries">Choose a country:</label> -->
     <select
       name="countries"
       class="countries"
@@ -11,7 +10,10 @@
         v-for="(country, index) in countries"
         :key="index"
         :value="country.key"
-      >{{country.flag}} {{country.key}}</option>
+      >
+        {{country.flag}} {{country.key}}
+      </option>
+      <!-- <img :src="`https://www.countryflags.io/${{country.key}}/flat/16.png'"/>{{country.flag}} {{country.key}}</option> -->
     </select>
   </div>
 </template>
