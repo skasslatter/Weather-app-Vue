@@ -1,6 +1,6 @@
 <template>
   <div>
-    <WeatherAverage v-bind:forecastData="forecastData" />
+    <WeatherAverage v-bind:forecastData="forecastData" @average="onAverageUpdate" />
     <WeatherNextWeek v-bind:forecastData="forecastData" />
   </div>
 </template>
@@ -12,15 +12,18 @@ import WeatherNextWeek from "./WeatherNextWeek";
 export default {
   name: "WeatherForecast",
   data() {
-    return {
-      
-    };
+    return {};
   },
   components: {
     WeatherAverage,
     WeatherNextWeek
   },
-  methods: {},
+  methods: {
+    onAverageUpdate(newValue) {
+      this.average = newValue;
+      this.$emit("average", this.average);
+    }
+  },
   props: {
     forecastData: Array
   }

@@ -1,7 +1,6 @@
 <template>
   <div class="avarage-temp">
     <div class="date">{{dateString}}</div>
-    <!-- <div>{{this.averageTemperature}} °C</div> -->
     <div class="temp-container">
       <div class="temp">{{this.averageTemperature}}</div>
       <div class="celsius">°C</div>
@@ -37,6 +36,7 @@ export default {
         sum = sum + arr[i];
       }
       let average = Math.round(sum / arr.length);
+      this.$emit("average", average);
       return average;
     },
     dateString: function() {
@@ -52,9 +52,9 @@ export default {
         .toLocaleString({ month: "long" });
 
       if (startDate.year !== endDate.year) {
-        return `${startMonth} ${startDate.day} ${startDate.year} - ${endMonth.month} ${endDate.day} ${endDate.year}`;
+        return `${startMonth} ${startDate.day} ${startDate.year} - ${endMonth} ${endDate.day} ${endDate.year}`;
       } else if (startDate.month !== endDate.month) {
-        return `${startMonth} ${startDate.day} - ${endMonth.month} ${endDate.day} ${startDate.year}`;
+        return `${startMonth} ${startDate.day} - ${endMonth} ${endDate.day} ${startDate.year}`;
       } else {
         return `${startMonth} ${startDate.day} - ${endDate.day} ${startDate.year}`;
       }

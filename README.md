@@ -1,24 +1,22 @@
 # wk-assignment
 
-## Project setup
-```
-npm install
-```
+</b>Used technologies:</b>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Vue.js | Javascript | CSS | HTML
 
-### Compiles and minifies for production
-```
-npm run build
-```
+API: weatherbit.io 
 
-### Lints and fixes files
-```
-npm run lint
-```
+</b>Instructions:</b>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Before running the application, you need to install the dependencies by running the following command: npm install
+Create a .env file and add your API key for the Weatherbit api: VUE_APP_APIKEY=yourKey
+
+To run the application run: npm run serve
+
+Open http://localhost:8080 to view it in the browser. The page will reload if you make edits.
+
+<br/>
+
+<b>Content:</b>
+
+<b>Challenges:</b>
