@@ -9,7 +9,7 @@
         type="text"
         placeholder="Please enter your location.."
       />
-      <img v-on:click="handleSubmit" src="magnifyingGlass.png" alt="Search" />
+      <img v-on:click="handleSubmit" src="/magnifyingGlass.png" alt="Search" />
     </div>
   </div>
 </template>
