@@ -43,10 +43,7 @@ export default {
 
 <style scoped>
 .searchbar {
-  width: 632px;
-  height: 92px;
-  left: 404px;
-  top: 374px;
+  width: 588px;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -59,35 +56,31 @@ export default {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 48px;
+  padding: 22px;
 }
 
 .cloud-icon {
   width: 48px;
   height: 48px;
-  left: 426px;
-  top: 396px;
   align-self: center;
 }
 
 .search-text {
-  width: 425px;
-  height: 48px;
-  left: 589px;
-  top: 396px;
+  width: 391px;
 
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 9px 17px;
 }
 
 .search-text input {
   width: 299px;
   height: 30px;
-  left: 606px;
-  top: 405px;
+  padding: 0px;
 
   font-weight: normal;
   font-size: 14px;
