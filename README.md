@@ -7,10 +7,10 @@ API: weatherbit.io
 
 <b>Instructions:</b>
 
-Before running the application, install the dependencies by running the following command: npm install
-Create a .env file and add your API key for the Weatherbit api: VUE_APP_APIKEY=yourKey
+Before running the application, install the dependencies by running the following command: <b>npm install</b>
+Create a .env file and add your API key for the Weatherbit api: <b>VUE_APP_APIKEY=yourKey</b>
 
-To run the application run: npm run serve
+To run the application run: <b>npm run serve</b>
 
 Open http://localhost:8080 to view it in the browser. The page will reload if you make edits.
 
