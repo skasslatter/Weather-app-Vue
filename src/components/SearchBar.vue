@@ -7,7 +7,7 @@
         v-model="location"
         v-on:keyup.enter="handleSubmit"
         type="text"
-        placeholder="Please enter your location.."
+        placeholder="Please enter your location..."
       />
       <img
         v-on:click="handleSubmit"
@@ -58,7 +58,6 @@ export default {
   box-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
   border-radius: 16px;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   margin-bottom: 48px;
   padding: 22px;
@@ -72,8 +71,6 @@ export default {
 
 .search-text {
   width: 391px;
-
-  background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   display: flex;
@@ -95,39 +92,35 @@ export default {
   width: 299px;
   height: 30px;
   padding: 0px;
-
-  font-weight: normal;
+  /* font-weight: normal;
   font-size: 14px;
   line-height: 21px;
   display: flex;
-  align-items: center;
-
+  align-items: center; */
   color: #08153e;
   border-width: 0;
   outline: none;
 }
 
-.search-text img {
+/* .search-text img {
   width: 17.41px;
   height: 19.41px;
   left: 981px;
   top: 410px;
-}
+} */
 
 .country-select {
-  width: 95px;
+  width: 80px;
   height: 48px;
-  left: 486px;
-  top: 216px;
-
-  background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
 }
 
 .transparent {
   opacity: 0.5;
 }
 </style>
+

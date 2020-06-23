@@ -45,7 +45,6 @@ export default {
 
 <style scoped>
 .week-container {
-  flex-direction: row;
   display: flex;
   justify-content: space-around;
   width: 632px;
@@ -59,17 +58,9 @@ export default {
 
 .weekday {
   text-transform: uppercase;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
   font-size: 12px;
   line-height: 24px;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
-
   color: #08153e;
 }
 
@@ -78,22 +69,14 @@ export default {
 }
 
 .temp {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-
   color: #ffffff;
 }
 
 .celsius {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
   font-size: 14px;
   line-height: 24px;
-
   color: #ffffff;
 }
 </style>

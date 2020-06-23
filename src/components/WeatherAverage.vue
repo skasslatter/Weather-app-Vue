@@ -66,16 +66,9 @@ export default {
 <style scoped>
 .date {
   text-transform: uppercase;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
   font-size: 12px;
   line-height: 24px;
-
-  display: flex;
-  align-items: center;
   letter-spacing: 0.06em;
-
   color: #08153e;
   margin-bottom: 27px;
 }
@@ -92,18 +85,14 @@ export default {
 }
 
 .temp {
-  font-weight: 600;
   font-size: 120px;
   line-height: 120px;
-
   color: #ffffff;
 }
 
 .celsius {
-  font-weight: 600;
   font-size: 24px;
-  line-height: 32px;
-
+  /* line-height: 32px; */
   color: #ffffff;
 }
 </style>
