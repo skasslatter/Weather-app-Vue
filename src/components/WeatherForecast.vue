@@ -11,24 +11,17 @@ import WeatherNextWeek from "./WeatherNextWeek";
 
 export default {
   name: "WeatherForecast",
-  data() {
-    return {};
-  },
   components: {
     WeatherAverage,
     WeatherNextWeek
   },
-  methods: {
-    onAverageUpdate(newValue) {
-      this.average = newValue;
-      this.$emit("average", this.average);
-    }
-  },
   props: {
     forecastData: Array
+  },
+  methods: {
+    onAverageUpdate(average) {
+      this.$emit("average", average);
+    }
   }
 };
 </script>
-
-<style scoped>
-</style>

@@ -14,11 +14,6 @@ import { DateTime } from "luxon";
 
 export default {
   name: "WeatherForecast",
-  data() {
-    return {};
-  },
-  components: {},
-  methods: {},
   props: {
     forecastData: Array
   },
@@ -27,15 +22,14 @@ export default {
       if (!this.forecastData) {
         return null;
       }
-      let arr = [];
-      for (let i = 0; i < this.forecastData.length; i++) {
-        arr.push(this.forecastData[i].temp);
-      }
+      const arr = this.forecastData.map(day => {
+        return day.temp;
+      });
       let sum = 0;
       for (let i = 0; i < arr.length; i++) {
         sum = sum + arr[i];
       }
-      let average = Math.round(sum / arr.length);
+      const average = Math.round(sum / arr.length);
       this.$emit("average", average);
       return average;
     },
@@ -92,7 +86,6 @@ export default {
 
 .celsius {
   font-size: 24px;
-  /* line-height: 32px; */
   color: #ffffff;
 }
 </style>

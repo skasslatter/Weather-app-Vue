@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log("testing handleSubmit: ", this.location, this.countryCode);
       let data = {
         location: this.location,
         countryCode: this.countryCode
@@ -92,22 +91,10 @@ export default {
   width: 299px;
   height: 30px;
   padding: 0px;
-  /* font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
-  display: flex;
-  align-items: center; */
   color: #08153e;
   border-width: 0;
   outline: none;
 }
-
-/* .search-text img {
-  width: 17.41px;
-  height: 19.41px;
-  left: 981px;
-  top: 410px;
-} */
 
 .country-select {
   width: 80px;

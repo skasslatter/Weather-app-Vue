@@ -15,11 +15,6 @@ import { DateTime } from "luxon";
 
 export default {
   name: "WeatherForecast",
-  data() {
-    return {};
-  },
-  components: {},
-  methods: {},
   props: {
     forecastData: Array
   },
@@ -28,13 +23,13 @@ export default {
       if (!this.forecastData) {
         return null;
       }
-      let arr = [];
+      const arr = [];
       for (let i = 0; i < 7; i++) {
-        let date = DateTime.fromISO(this.forecastData[i].datetime);
-        let dayOfTheWeek = date
+        const date = DateTime.fromISO(this.forecastData[i].datetime);
+        const dayOfTheWeek = date
           .setLocale("en-US")
           .toLocaleString({ weekday: "long" });
-        let temp = Math.round(this.forecastData[i].temp);
+        const temp = Math.round(this.forecastData[i].temp);
         arr.push({ dayOfTheWeek, temp });
       }
       return arr;

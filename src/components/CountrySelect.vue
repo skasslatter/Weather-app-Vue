@@ -2,45 +2,35 @@
   <div>
     <div class="flag-container">
       <img :src="flagUrl" alt="flag" class="flag" />
-      <!-- <div class="flag" v-bind:style="flagUrl" /> -->
     </div>
-
     <select
-      name="countries"
       class="countries"
       v-bind:value="value"
       v-on:input="$emit('input', $event.target.value)"
     >
-      <option v-for="(country, index) in countries" :key="index" :value="country.key">
-        <!-- {{country.flag}} -->
-        {{country.key}}
+      <option v-for="(country, index) in countries" :key="index" :value="country">
+        {{country}}
       </option>
     </select>
   </div>
 </template>
 
 <script>
+
 import { countries } from "countries-list";
-const countriesNameAndFlag = [];
-for (const key in countries) {
-  countriesNameAndFlag.push({
-    key: key,
-    flag: countries[key].emoji
-  });
-}
+
+const countryCodes = Object.keys(countries);
 
 export default {
   name: "CountrySelect",
   props: ["value"],
   data() {
     return {
-      countries: countriesNameAndFlag
+      countries: countryCodes
     };
   },
   computed: {
     flagUrl: function() {
-      // return `background-image: url(https://www.countryflags.io/${this.value}/flat/64.png); background-repeat: no-repeat; width: 100%;height: 100%;`;
-      // return `background: red`
       return `https://www.countryflags.io/${this.value}/flat/64.png`;
     }
   }
