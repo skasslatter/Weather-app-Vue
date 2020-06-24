@@ -16,7 +16,6 @@ Create a .env file and add your API key for the Weatherbit api: <b>VUE_APP_APIKE
 To run the application run: <b>npm run serve</b>
 
 Open http://localhost:8080 to view it in the browser. The page will reload if you make edits.
-
 <br/>
 
 <b>Content:</b>
