@@ -12,12 +12,12 @@
 </template>
 
 <script>
-
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import WeatherForecast from "./components/WeatherForecast";
 
-const initialGradient = "linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(133.86deg, #102f7e -11.47%, #0c8dd6 3.95%, #1aa0ec 19.37%, #60c6ff 34.78%, #9bdbff 50.19%, #b4deda 65.61%, #ffd66b 81.02%, #ffc178 96.44%, #fe9255 111.85%)";
+const initialGradient =
+  "linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(133.86deg, #102f7e -11.47%, #0c8dd6 3.95%, #1aa0ec 19.37%, #60c6ff 34.78%, #9bdbff 50.19%, #b4deda 65.61%, #ffd66b 81.02%, #ffc178 96.44%, #fe9255 111.85%)";
 
 export default {
   name: "App",
@@ -36,7 +36,7 @@ export default {
   methods: {
     updateWeather(data) {
       this.loading = true;
-      const baseUrl = `http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.VUE_APP_APIKEY}`;
+      const baseUrl = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.VUE_APP_APIKEY}`;
       axios
         .get(`${baseUrl}&city=${data.location},${data.countryCode}&days=10`)
         .then(response => {
